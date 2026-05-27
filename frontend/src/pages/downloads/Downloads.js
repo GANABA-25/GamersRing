@@ -46,7 +46,7 @@ const Downloads = () => {
 
     try {
       const response = await axios.get(
-        `https://gamerring-backend.onrender.com/user/gameComments/${gameId}`
+        `https://gamersring.onrender.com/user/gameComments/${gameId}`,
       );
       setFetchedComments(response.data.comments);
     } catch (error) {
@@ -90,7 +90,7 @@ const Downloads = () => {
             <h1 className="max-[767px]:text-3xl max-[767px]:my-2 font-bold font-payback tracking-wider md:text-5xl md:my-4 lg:text-3xl">
               {payload.title}
             </h1>
-            <div className="font-serif md:text-xl tracking-wider lg:text-sm">
+            <div className="font-serif tracking-wider md:text-xl lg:text-sm">
               <StringSplitter text={myString4} delimiter={delimiter} />
             </div>
           </div>
@@ -106,14 +106,14 @@ const Downloads = () => {
                   <h1 className="max-[767px]:my-2 font-bold tracking-wider md:text-xl md:my-3">
                     MINIMUM REQUIREMENTS
                   </h1>
-                  <span className="md:text-xl tracking-wider lg:text-sm">
+                  <span className="tracking-wider md:text-xl lg:text-sm">
                     <StringSplitter text={myString} delimiter={delimiter} />
                   </span>
 
                   <h1 className="max-[767px]:my-2 font-bold tracking-wider md:text-xl md:my-3">
                     RECOMMENDED REQUIREMENTS
                   </h1>
-                  <span className="md:text-xl tracking-wider lg:text-sm">
+                  <span className="tracking-wider md:text-xl lg:text-sm">
                     <StringSplitter text={myString2} delimiter={delimiter} />
                   </span>
                 </span>
@@ -125,7 +125,7 @@ const Downloads = () => {
           <h1 className="max-[767px]:text-3xl max-[767px]:my-2 font-payback underline underline-offset-4 md:text-5xl md:my-4 lg:text-3xl">
             NOTE
           </h1>
-          <p className="md:text-xl tracking-wider lg:text-sm break-all">
+          <p className="tracking-wider break-all md:text-xl lg:text-sm">
             Kindly be aware that this is the {payload.platform} version of the
             game,
             <br className="hidden lg:block" /> exclusively tailored to provide
@@ -138,7 +138,7 @@ const Downloads = () => {
             <div className="font-serif max-[767px]:p-4 md:p-8 grid gap-4">
               <div className="grid max-[767px]:gap-2 md:gap-3">
                 <div className="flex justify-between">
-                  <h2 className="font-payback text-center underline underline-offset-2 uppercase md:text-xl">
+                  <h2 className="text-center underline uppercase font-payback underline-offset-2 md:text-xl">
                     Trying To Download
                   </h2>
                   <button

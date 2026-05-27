@@ -6,7 +6,7 @@ const CommentsList = (props) => {
   const { setCommentedUserName } = useUserContext();
   const formattedDate = format(
     new Date(props.createdAt),
-    "MMMM dd, yyyy 'at' hh:mm a"
+    "MMMM dd, yyyy 'at' hh:mm a",
   );
 
   const showInputHandler = () => {
@@ -29,7 +29,7 @@ const CommentsList = (props) => {
           <p className="lg:text-[1rem] break-all">{props.comment}</p>
           <p
             onClick={showInputHandler}
-            className="my-2 hover:text-blue-600 cursor-pointer opacity-80 lg:text-sm"
+            className="my-2 cursor-pointer hover:text-blue-600 opacity-80 lg:text-sm"
           >
             Reply
           </p>
@@ -39,7 +39,7 @@ const CommentsList = (props) => {
             {props.replies.map((reply) => {
               const replyFormattedDate = format(
                 new Date(reply.createdAt),
-                "MMMM dd, yyyy 'at' hh:mm a"
+                "MMMM dd, yyyy 'at' hh:mm a",
               );
 
               return (

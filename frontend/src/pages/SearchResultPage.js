@@ -63,7 +63,7 @@ const SearchResultPage = () => {
       setIsLoading(true);
       try {
         const response = await axios.get(
-          `https://gamerring-backend.onrender.com/games/searchedGames/?searchedTerm=${searchTerm}&page=1`
+          `https://gamersring.onrender.com/games/searchedGames/?searchedTerm=${searchTerm}&page=1`,
         );
 
         if (response.status === 200) {
@@ -97,7 +97,7 @@ const SearchResultPage = () => {
       <div className="max-[767px]:w-[95%] md:w-[95%] m-auto">
         <div className="font-serif lg:grid lg:grid-cols-4 lg:gap-3">
           {isLoading ? (
-            <div className="flex justify-center items-center h-screen w-screen">
+            <div className="flex items-center justify-center w-screen h-screen">
               <Lottie
                 className="w-[6rem]"
                 animationData={loadingAnimation}
@@ -108,7 +108,7 @@ const SearchResultPage = () => {
             <>
               <section className="col-span-3">
                 {fetchedGamesErrorMessage ? (
-                  <div className="grid gap-4 justify-center items-center">
+                  <div className="grid items-center justify-center gap-4">
                     <div className="flex gap-3">
                       <h1>{fetchedGamesErrorMessage.message}</h1>
                       <h1 className="text-red-600">
@@ -116,8 +116,8 @@ const SearchResultPage = () => {
                       </h1>
                     </div>
 
-                    <div className="grid gap-4 justify-center items-center w-full">
-                      <h1 className="border-2 text-center p-4">No Results</h1>
+                    <div className="grid items-center justify-center w-full gap-4">
+                      <h1 className="p-4 text-center border-2">No Results</h1>
                     </div>
                   </div>
                 ) : (

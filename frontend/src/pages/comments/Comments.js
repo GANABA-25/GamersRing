@@ -37,8 +37,9 @@ const Comments = ({ gameId, refreshComments }) => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        `https://gamerring-backend.onrender.com/user/comment/${gameId}`,
-        userComment
+        `https://gamersring.onrender.com/user/comment/${gameId}`,
+
+        userComment,
       );
 
       console.log("Checking response", response);
@@ -100,7 +101,7 @@ const Comments = ({ gameId, refreshComments }) => {
                 loop={true}
               />
             ) : (
-              <BsFillSendArrowDownFill className="flex justify-center items-center" />
+              <BsFillSendArrowDownFill className="flex items-center justify-center" />
             )}
           </button>
         </form>

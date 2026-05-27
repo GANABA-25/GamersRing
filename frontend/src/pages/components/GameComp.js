@@ -8,7 +8,7 @@ const GameComp = (props) => {
 
   return (
     <Fragment>
-      <div className="border-2 border-gray-400 relative flex flex-col">
+      <div className="relative flex flex-col border-2 border-gray-400">
         <div
           onClick={() =>
             navigate("/Downloads", {
@@ -33,21 +33,21 @@ const GameComp = (props) => {
 
             {location.pathname === "/Downloads" ? (
               <>
-                <p className="my-2 leading-7 text-base tracking-wide opacity-80 md:text-2xl lg:text-xl">
+                <p className="my-2 text-base leading-7 tracking-wide opacity-80 md:text-2xl lg:text-xl">
                   {props.downloadDescription}
                 </p>
-                <p className="my-2 leading-7 text-base tracking-wide opacity-80 md:text-2xl lg:text-xl">
+                <p className="my-2 text-base leading-7 tracking-wide opacity-80 md:text-2xl lg:text-xl">
                   {props.minimumSystemRequirement}
                 </p>
-                <p className="my-2 leading-7 text-base tracking-wide opacity-80 md:text-2xl lg:text-xl">
+                <p className="my-2 text-base leading-7 tracking-wide opacity-80 md:text-2xl lg:text-xl">
                   {props.recommendedSystemRequirement}
                 </p>
-                <p className="my-2 leading-7 text-base tracking-wide opacity-80 md:text-2xl lg:text-xl">
+                <p className="my-2 text-base leading-7 tracking-wide opacity-80 md:text-2xl lg:text-xl">
                   {props.version}
                 </p>
               </>
             ) : (
-              <p className="my-2 leading-7 text-base tracking-wide opacity-80 md:text-2xl lg:text-xl">
+              <p className="my-2 text-base leading-7 tracking-wide opacity-80 md:text-2xl lg:text-xl">
                 {props.description}
               </p>
             )}

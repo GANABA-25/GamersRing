@@ -71,7 +71,7 @@ const HomePage = () => {
     <Fragment>
       <ScrollToTop />
       {errorMsg ? (
-        <div className="grid justify-center items-center h-screen">
+        <div className="grid items-center justify-center h-screen">
           <h1 className="font-serif">
             <Lottie
               className="lg:w-[30rem]"
@@ -84,7 +84,7 @@ const HomePage = () => {
       ) : (
         <>
           {isLoading ? (
-            <div className="flex justify-center items-center w-screen h-screen">
+            <div className="flex items-center justify-center w-screen h-screen">
               <Lottie
                 className="w-[6rem]"
                 animationData={loadingAnimation}

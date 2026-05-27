@@ -42,7 +42,8 @@ const Reply = ({ setShowReplyInput, refreshComments }) => {
 
     try {
       await axios.post(
-        `https://gamerring-backend.onrender.com/user/replyComment/${id}`,
+        `https://gamersring.onrender.com/user/replyComment/${id}`,
+
         replyComment,
       );
 
