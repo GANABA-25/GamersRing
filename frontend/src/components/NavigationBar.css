@@ -1,0 +1,27 @@
+.container {
+  background-image: url("../images/ghostRecon.jpg");
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  height: 45rem;
+  display: flex;
+  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    height: 55rem;
+    max-width: 100%;
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    height: 35rem;
+    background-repeat: no-repeat;
+    background-position: contain;
+    background-size: cover;
+    object-fit: cover;
+  }
+}
