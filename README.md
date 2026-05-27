@@ -150,7 +150,7 @@ Add screenshots here to improve presentation:
 
 ## 👨‍💻 Author
 
-Built by **Gamer Ring Team**
+Built by **Nathaniel Owusu**
 
 ---
 
