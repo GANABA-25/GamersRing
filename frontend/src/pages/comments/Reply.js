@@ -41,9 +41,9 @@ const Reply = ({ setShowReplyInput, refreshComments }) => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(
+      await axios.post(
         `https://gamerring-backend.onrender.com/user/replyComment/${id}`,
-        replyComment
+        replyComment,
       );
 
       if (refreshComments) refreshComments();
@@ -73,7 +73,7 @@ const Reply = ({ setShowReplyInput, refreshComments }) => {
                 Reply to {commentUserName}
               </label>
               <h1
-                className="cursor-pointer lg:hover:text-blue-600 capitalize"
+                className="capitalize cursor-pointer lg:hover:text-blue-600"
                 onClick={cancelReplyHandler}
               >
                 cancel reply
@@ -115,7 +115,7 @@ const Reply = ({ setShowReplyInput, refreshComments }) => {
                 loop={true}
               />
             ) : (
-              <BsFillSendArrowDownFill className="flex justify-center items-center" />
+              <BsFillSendArrowDownFill className="flex items-center justify-center" />
             )}
           </button>
         </form>

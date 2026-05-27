@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export const useFetch = (fetchFn) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -7,26 +7,34 @@ export const useFetch = (fetchFn) => {
   const [totalPages, setTotalPages] = useState(0);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const fetchData = async (page) => {
-    setIsLoading(true);
-    try {
-      const response = await fetchFn(page);
-      const { totalPages, data } = response;
-      setTotalPages(totalPages);
-      setFetchedData(data);
-    } catch (error) {
-      setErrorMsg(
-        "We're currently experiencing some technical issues. Please try again later."
-      );
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const fetchData = useCallback(
+    async (page) => {
+      setIsLoading(true);
+
+      try {
+        const response = await fetchFn(page);
+
+        const { totalPages, data } = response;
+
+        setTotalPages(totalPages);
+        setFetchedData(data);
+        setErrorMsg("");
+      } catch (error) {
+        setErrorMsg(
+          "We're currently experiencing some technical issues. Please try again later.",
+        );
+
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [fetchFn],
+  );
 
   useEffect(() => {
     fetchData(currentPage + 1);
-  }, [currentPage]);
+  }, [currentPage, fetchData]);
 
   return {
     isLoading,

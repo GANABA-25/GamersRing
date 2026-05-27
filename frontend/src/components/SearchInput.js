@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../store/Auth-Context";
-import axios from "axios";
 
 const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { setFetchedGames, setFetchedGamesErrorMessage } = useUserContext();
+  // const { setFetchedGames, setFetchedGamesErrorMessage } = useUserContext();
   const navigate = useNavigate();
 
   const searchInputHandler = async (e) => {
     e.preventDefault();
+
+    if (!searchTerm.trim()) return;
+
     navigate(`/SearchResultPage?searchTerm=${searchTerm}`);
 
     // try {
