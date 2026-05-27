@@ -10,8 +10,7 @@ It features a responsive UI, secure authentication, and a scalable backend API f
 
 ## 🚀 Live Demo
 
-- 🌐 Frontend: [https://your-live-link.com](https://your-live-link.com)
-- 🔗 Backend: [https://your-api-link.com](https://your-api-link.com)
+- 🌐 Frontend: https://gamers-ring-42hd.vercel.app
 
 ---
 
